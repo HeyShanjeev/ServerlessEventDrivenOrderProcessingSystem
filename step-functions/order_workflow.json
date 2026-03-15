@@ -1,0 +1,21 @@
+{
+  "StartAt": "ProcessPayment",
+  "States": {
+    "ProcessPayment": {
+      "Type": "Task",
+      "Next": "UpdateInventory"
+    },
+    "UpdateInventory": {
+      "Type": "Task",
+      "Next": "SendNotification"
+    },
+    "SendNotification": {
+      "Type": "Task",
+      "Next": "UpdateOrderStatus"
+    },
+    "UpdateOrderStatus": {
+      "Type": "Task",
+      "End": true
+    }
+  }
+}
